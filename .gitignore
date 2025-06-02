@@ -21,3 +21,10 @@ cache.txt
 .ruff_cache
 *_secrets.json
 ollama
+
+
+/frontend/
+docker-compose.yml
+MANIFEST.in
+pypi_command.sh
+setup.py
