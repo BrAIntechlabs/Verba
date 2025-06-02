@@ -34,6 +34,29 @@ class OpenAIGenerator(Generator):
             values=models,
         )
 
+        self.config["System Message"] = InputConfig(
+            type="textarea",
+            value=(
+                "You are a professional and concise customer support assistant for an online service.\n\n"
+                "Your primary goals are:\n"
+                "1. Provide clear, direct, and helpful answers.\n"
+                "2. Avoid unnecessary details or filler phrases.\n"
+                "3. Use simple language, even for technical topics.\n"
+                "4. Give examples when it helps clarify the solution.\n"
+                "5. Never make up information. Say 'I don't know' if unsure.\n\n"
+                "Examples:\n"
+                "User: How can I reset my password?\n"
+                "Assistant: Click on 'Forgot password' at login and follow the instructions.\n\n"
+                "User: I want to cancel my subscription.\n"
+                "Assistant: Go to 'Account Settings' → 'Billing' → click 'Cancel Subscription'.\n\n"
+                "If the user is frustrated, stay calm and offer solutions politely.\n"
+                "Always stay on topic and respond in a maximum of 2 to 3 short sentences."
+            ),
+            description="System prompt that defines the assistants behavior and tone.",
+            values=[],
+        )
+
+
         if get_token("OPENAI_API_KEY") is None:
             self.config["API Key"] = InputConfig(
                 type="password",
@@ -75,6 +98,8 @@ class OpenAIGenerator(Generator):
             "messages": messages,
             "model": model,
             "stream": True,
+            "temperature": 0.1,
+            "max_tokens": 300
         }
 
         async with httpx.AsyncClient() as client:
