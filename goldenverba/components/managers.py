@@ -53,7 +53,7 @@ from goldenverba.components.chunking.SemanticChunker import SemanticChunker
 # Import Embedders
 from goldenverba.components.embedding.OpenAIEmbedder import OpenAIEmbedder
 from goldenverba.components.embedding.CohereEmbedder import CohereEmbedder
-from goldenverba.components.embedding.OllamaEmbedder import OllamaEmbedder
+# from goldenverba.components.embedding.OllamaEmbedder import OllamaEmbedder
 from goldenverba.components.embedding.UpstageEmbedder import UpstageEmbedder
 from goldenverba.components.embedding.WeaviateEmbedder import WeaviateEmbedder
 from goldenverba.components.embedding.VoyageAIEmbedder import VoyageAIEmbedder
@@ -67,7 +67,7 @@ from goldenverba.components.retriever.WindowRetriever import WindowRetriever
 # Import Generators
 from goldenverba.components.generation.CohereGenerator import CohereGenerator
 from goldenverba.components.generation.AnthrophicGenerator import AnthropicGenerator
-from goldenverba.components.generation.OllamaGenerator import OllamaGenerator
+# from goldenverba.components.generation.OllamaGenerator import OllamaGenerator
 from goldenverba.components.generation.OpenAIGenerator import OpenAIGenerator
 from goldenverba.components.generation.GroqGenerator import GroqGenerator
 from goldenverba.components.generation.NovitaGenerator import NovitaGenerator
@@ -102,7 +102,7 @@ if production != "Production":
         JSONChunker(),
     ]
     embedders = [
-        OllamaEmbedder(),
+        # OllamaEmbedder(),
         SentenceTransformersEmbedder(),
         WeaviateEmbedder(),
         UpstageEmbedder(),
@@ -112,7 +112,7 @@ if production != "Production":
     ]
     retrievers = [WindowRetriever()]
     generators = [
-        OllamaGenerator(),
+        # OllamaGenerator(),
         OpenAIGenerator(),
         AnthropicGenerator(),
         CohereGenerator(),
