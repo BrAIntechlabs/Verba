@@ -622,7 +622,7 @@ export const WeaviateTheme: Theme = {
   subtitle: { ...LightTheme.subtitle, text: "Weaviate Chatbot" },
   intro_message: {
     ...LightTheme.intro_message,
-    text: "Welcome to Verba, your open-source RAG application!",
+    text: "Welcome to BrAIn, I'm BrAIny, your AI Asisstant. Ask me a question and I'll try to help you",
   },
   image: {
     ...LightTheme.image,
