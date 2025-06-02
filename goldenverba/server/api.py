@@ -1,8 +1,8 @@
 from fastapi import FastAPI, WebSocket, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import JSONResponse #, FileResponse
 from contextlib import asynccontextmanager
-from fastapi.staticfiles import StaticFiles
+# from fastapi.staticfiles import StaticFiles
 import asyncio
 
 from goldenverba.server.helpers import LoggerManager, BatchManager
