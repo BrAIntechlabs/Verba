@@ -114,23 +114,23 @@ async def check_same_origin(request: Request, call_next):
         return await call_next(request)
 
 
-BASE_DIR = Path(__file__).resolve().parent
+# BASE_DIR = Path(__file__).resolve().parent
 
-# Serve the assets (JS, CSS, images, etc.)
-app.mount(
-    "/static/_next",
-    StaticFiles(directory=BASE_DIR / "frontend/out/_next"),
-    name="next-assets",
-)
+# # Serve the assets (JS, CSS, images, etc.)
+# app.mount(
+#     "/static/_next",
+#     StaticFiles(directory=BASE_DIR / "frontend/out/_next"),
+#     name="next-assets",
+# )
 
-# Serve the main page and other static files
-app.mount("/static", StaticFiles(directory=BASE_DIR / "frontend/out"), name="app")
+# # Serve the main page and other static files
+# app.mount("/static", StaticFiles(directory=BASE_DIR / "frontend/out"), name="app")
 
 
-@app.get("/")
-@app.head("/")
-async def serve_frontend():
-    return FileResponse(os.path.join(BASE_DIR, "frontend/out/index.html"))
+# @app.get("/")
+# @app.head("/")
+# async def serve_frontend():
+#     return FileResponse(os.path.join(BASE_DIR, "frontend/out/index.html"))
 
 
 ### INITIAL ENDPOINTS
